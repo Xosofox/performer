@@ -19,4 +19,6 @@ php55:
     - "9055:9000"
   volumes:
     - ./webroot:/var/www/html
-    - ./config/php-fpm.conf:/usr/local/etc/php-fpm.d/zz-www.conf
+    - ./webroot:/webroot
+    - ./logs/:/logs/
+    - ./config/php-fpm.d/www.conf:/usr/local/etc/php-fpm.conf
