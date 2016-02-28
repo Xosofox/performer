@@ -1,0 +1,22 @@
+nginx:
+  container_name: nginxer
+  image: nginx
+  ports:
+    - "8080:80"
+  volumes:
+    - ./webroot:/webroot
+    - ./logs/nginx_access.log:/var/log/nginx/access.log
+    - ./logs/nginx_error.log:/var/log/nginx/error.log
+    - ./config/vhosts.conf:/etc/nginx/conf.d/default.conf
+    #- ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+  links:
+    - php55
+
+php55:
+  container_name: php55
+  image: php:5.5-fpm
+  ports:
+    - "9055:9000"
+  volumes:
+    - ./webroot:/var/www/html
+    - ./config/php-fpm.conf:/usr/local/etc/php-fpm.d/zz-www.conf
