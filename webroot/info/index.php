@@ -6,8 +6,4 @@ Jaaaa
  * Date: 28.02.16
  * Time: 12:06
  */
-echo "DUDUDU";
-
-?>
-
-
+echo date("Y-m-d H:i:s");
