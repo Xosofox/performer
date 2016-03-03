@@ -2,7 +2,7 @@ nginx:
   container_name: web
   image: nginx
   ports:
-    - "8080:80"
+    - "80:80"
   volumes:
     - ./webroot:/webroot
     - ./logs/nginx_access.log:/var/log/nginx/access.log
