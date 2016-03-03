@@ -1,5 +1,5 @@
 nginx:
-  container_name: nginxer
+  container_name: web
   image: nginx
   ports:
     - "8080:80"
